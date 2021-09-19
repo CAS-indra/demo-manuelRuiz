@@ -1,0 +1,20 @@
+<app-titulo></app-titulo>
+<h3 [style.color]="color"> Hay {{ transacciones.length }} transacciones </h3>
+
+<div *ngFor="let transaccion of transacciones">
+  <span style="color:green"
+        *ngIf="transaccion.amount>0">
+    {{ transaccion.name }} {{ transaccion.amount }}
+  </span>
+  <span style="color:red"
+        *ngIf="transaccion.amount<0">
+    {{ transaccion.name }} {{ transaccion.amount }}
+  </span>
+</div>
+
+<!-- <progress *ngIf="elValor>0"
+          [value]="elValor"
+          max="10"></progress>
+
+<button (click)="incrementar()">Incrementar</button>
+<button (click)="reducir()">Reducir</button> -->
